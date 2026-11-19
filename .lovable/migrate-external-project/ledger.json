@@ -1,0 +1,13 @@
+[
+ {"capability":"code","source":"github rdxbotv4-creator/sunshine-and-sprinkles","outcome":"migrate","status":"pending","next_action":"copy src, assets, public, deps"},
+ {"capability":"schema","source":"drizzle/migrations 0000+0001","outcome":"migrate","status":"pending","next_action":"apply in Lovable Cloud"},
+ {"capability":"records","source":"novel_stats, reviews, feedback, novel_pdfs, admin_emails","outcome":"migrate","status":"pending","next_action":"request CSV exports after preview"},
+ {"capability":"auth identities","source":"source Cloud auth.users (admin login)","outcome":"migrate","status":"pending","next_action":"request user export after preview"},
+ {"capability":"authorization","source":"user_roles + has_role + admin_emails trigger","outcome":"migrate","status":"pending","next_action":"apply with schema"},
+ {"capability":"uploaded file bytes","source":"storage bucket novel-pdfs","outcome":"migrate","status":"pending","next_action":"create bucket; request PDF files"},
+ {"capability":"AI chat","source":"/api/chat via Lovable AI gateway","outcome":"migrate","status":"pending","next_action":"verify LOVABLE_API_KEY and chat"},
+ {"capability":"public endpoints","source":"/api/chat","outcome":"preserve","status":"pending","next_action":"copy route"},
+ {"capability":"schedules/webhooks","source":"none detected (cron-auth.ts is generated helper only)","outcome":"none","status":"verified","next_action":""},
+ {"capability":"secrets","source":"LOVABLE_API_KEY (platform-provided)","outcome":"preserve","status":"pending","next_action":"check after Cloud enable"},
+ {"capability":"verification","source":"-","outcome":"verify","status":"pending","next_action":"build + browse routes"}
+]

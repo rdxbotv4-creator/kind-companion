@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as PdfsRouteImport } from './routes/pdfs'
+import { Route as PlaylistsRouteImport } from './routes/playlists'
+import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as AuthorsIndexRouteImport } from './routes/authors/index'
+import { Route as AuthorsSlugRouteImport } from './routes/authors/$slug'
+import { Route as NovelsIndexRouteImport } from './routes/novels/index'
+import { Route as NovelsSlugRouteImport } from './routes/novels/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PdfsRoute = PdfsRouteImport.update({
+  id: '/pdfs',
+  path: '/pdfs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlaylistsRoute = PlaylistsRouteImport.update({
+  id: '/playlists',
+  path: '/playlists',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiChatRoute = ApiChatRouteImport.update({
+  id: '/api/chat',
+  path: '/api/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthorsIndexRoute = AuthorsIndexRouteImport.update({
+  id: '/authors/',
+  path: '/authors/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthorsSlugRoute = AuthorsSlugRouteImport.update({
+  id: '/authors/$slug',
+  path: '/authors/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NovelsIndexRoute = NovelsIndexRouteImport.update({
+  id: '/novels/',
+  path: '/novels/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NovelsSlugRoute = NovelsSlugRouteImport.update({
+  id: '/novels/$slug',
+  path: '/novels/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/pdfs': typeof PdfsRoute
+  '/playlists': typeof PlaylistsRoute
+  '/api/chat': typeof ApiChatRoute
+  '/authors/$slug': typeof AuthorsSlugRoute
+  '/novels/$slug': typeof NovelsSlugRoute
+  '/authors/': typeof AuthorsIndexRoute
+  '/novels/': typeof NovelsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/pdfs': typeof PdfsRoute
+  '/playlists': typeof PlaylistsRoute
+  '/api/chat': typeof ApiChatRoute
+  '/authors/$slug': typeof AuthorsSlugRoute
+  '/novels/$slug': typeof NovelsSlugRoute
+  '/authors': typeof AuthorsIndexRoute
+  '/novels': typeof NovelsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/pdfs': typeof PdfsRoute
+  '/playlists': typeof PlaylistsRoute
+  '/api/chat': typeof ApiChatRoute
+  '/authors/$slug': typeof AuthorsSlugRoute
+  '/novels/$slug': typeof NovelsSlugRoute
+  '/authors/': typeof AuthorsIndexRoute
+  '/novels/': typeof NovelsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/pdfs'
+    | '/playlists'
+    | '/api/chat'
+    | '/authors/$slug'
+    | '/novels/$slug'
+    | '/authors/'
+    | '/novels/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/contact'
+    | '/pdfs'
+    | '/playlists'
+    | '/api/chat'
+    | '/authors/$slug'
+    | '/novels/$slug'
+    | '/authors'
+    | '/novels'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/pdfs'
+    | '/playlists'
+    | '/api/chat'
+    | '/authors/$slug'
+    | '/novels/$slug'
+    | '/authors/'
+    | '/novels/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
+  PdfsRoute: typeof PdfsRoute
+  PlaylistsRoute: typeof PlaylistsRoute
+  ApiChatRoute: typeof ApiChatRoute
+  AuthorsSlugRoute: typeof AuthorsSlugRoute
+  NovelsSlugRoute: typeof NovelsSlugRoute
+  AuthorsIndexRoute: typeof AuthorsIndexRoute
+  NovelsIndexRoute: typeof NovelsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pdfs': {
+      id: '/pdfs'
+      path: '/pdfs'
+      fullPath: '/pdfs'
+      preLoaderRoute: typeof PdfsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/playlists': {
+      id: '/playlists'
+      path: '/playlists'
+      fullPath: '/playlists'
+      preLoaderRoute: typeof PlaylistsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/chat': {
+      id: '/api/chat'
+      path: '/api/chat'
+      fullPath: '/api/chat'
+      preLoaderRoute: typeof ApiChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/authors/': {
+      id: '/authors/'
+      path: '/authors'
+      fullPath: '/authors/'
+      preLoaderRoute: typeof AuthorsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/authors/$slug': {
+      id: '/authors/$slug'
+      path: '/authors/$slug'
+      fullPath: '/authors/$slug'
+      preLoaderRoute: typeof AuthorsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/novels/': {
+      id: '/novels/'
+      path: '/novels'
+      fullPath: '/novels/'
+      preLoaderRoute: typeof NovelsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/novels/$slug': {
+      id: '/novels/$slug'
+      path: '/novels/$slug'
+      fullPath: '/novels/$slug'
+      preLoaderRoute: typeof NovelsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
+  PdfsRoute: PdfsRoute,
+  PlaylistsRoute: PlaylistsRoute,
+  ApiChatRoute: ApiChatRoute,
+  AuthorsSlugRoute: AuthorsSlugRoute,
+  NovelsSlugRoute: NovelsSlugRoute,
+  AuthorsIndexRoute: AuthorsIndexRoute,
+  NovelsIndexRoute: NovelsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
