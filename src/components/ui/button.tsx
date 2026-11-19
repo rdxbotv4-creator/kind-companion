@@ -20,6 +20,7 @@ const buttonVariants = cva(
         glass: "glass border border-border text-foreground hover:border-primary/50 hover:text-primary",
         youtube: "bg-youtube text-youtube-foreground font-semibold shadow-sm hover:bg-youtube/90",
         whatsapp: "bg-whatsapp text-whatsapp-foreground font-semibold shadow-sm hover:bg-whatsapp/90",
+        google: "border border-google-border bg-google text-google-foreground font-medium hover:brightness-125",
       },
       size: {
         default: "h-9 px-4 py-2",

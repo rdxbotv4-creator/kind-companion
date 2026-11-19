@@ -14,3 +14,4 @@
 - [ ] Admin page for PDF upload — blocked: waiting for owner's admin email
 - [ ] Installable app (PWA) with offline support (published site only), incl. offline reading of opened PDFs
 - [ ] Bring over existing reviews, feedback, counts and PDF files from the original project — waiting on the owner's data export
+- [ ] Make the owner's account admin once they sign up on /auth (owner didn't share an email)
